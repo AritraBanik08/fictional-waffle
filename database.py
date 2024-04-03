@@ -11,4 +11,4 @@ def conn():
 def create_table():
     cur = conn()
     cur.execute("CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, task TEXT, status TEXT)")
-    # cur.connection.commit()
+    cur.connection.commit()
