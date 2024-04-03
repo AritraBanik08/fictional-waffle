@@ -11,3 +11,8 @@ def conn():
 def create_table(cur):
     cur.execute("CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, task TEXT, status TEXT)")
     cur.connection.commit()
+
+
+def add_task(cur, task):
+    cur.execute("INSERT INTO tasks (task, status) VALUES (?, ?)", (task, "Not Done"))
+    cur.connection.commit()
