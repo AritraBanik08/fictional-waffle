@@ -21,3 +21,8 @@ def view_tasks(cur):
     cur.execute("SELECT * FROM tasks")
     tasks = cur.fetchall()
     return tasks
+
+
+def update_task(cur, task_id):
+    cur.execute("UPDATE tasks SET status = 'Done' WHERE id = ?", (task_id,))
+    cur.connection.commit()
