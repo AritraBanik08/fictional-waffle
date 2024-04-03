@@ -4,7 +4,6 @@ import sqlite3
 def conn():
     con = sqlite3.connect("todo.db")
     cur = con.cursor()
-
     return cur
 
 
@@ -16,6 +15,7 @@ def create_table(cur):
 def add_task(cur, task):
     cur.execute("INSERT INTO tasks (task, status) VALUES (?, ?)", (task, "Not Done"))
     cur.connection.commit()
+
 
 def view_tasks(cur):
     cur.execute("SELECT * FROM tasks")
