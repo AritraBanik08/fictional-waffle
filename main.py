@@ -6,7 +6,7 @@ if __name__ == '__main__':
     database.create_table(cur)
     print("Enter 1 to add task: \nEnter 2 to view tasks: \nEnter 3 to update task: \nPress any other key to exit:")
     while True:
-        a = input("Enter a number: ")
+        a = input("Enter your choice: ")
         if a == "1":
             task = input("Enter task: ")
             database.add_task(cur, task)
